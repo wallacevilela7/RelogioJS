@@ -14,9 +14,13 @@ function UpdateClock() {
 
 
     //FUNCIOMENTO RELOGIO ANALOGICO
-    let sDeg = (360 / 60 * second) - 90;
+    let sDeg = ((360 / 60) * second) - 90;
+    let mDeg = ((360 / 60) * minute) - 90;
+    let hDeg = ((360 / 12) * hour) - 90;
 
     sElement.style.transform = `rotate(${sDeg}deg)`;
+    mElement.style.transform = `rotate(${mDeg}deg)`;
+    hElement.style.transform = `rotate(${hDeg}deg)`;
 }
 
 function FixZero(time) {
@@ -24,3 +28,4 @@ function FixZero(time) {
 }
 
 setInterval(UpdateClock, 1000);
+UpdateClock();
